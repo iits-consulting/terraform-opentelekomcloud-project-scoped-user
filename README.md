@@ -16,9 +16,9 @@ Creates a programmatic IAM user in OTC scoped to the current project, along with
 
 ```hcl
 module "my_service_user" {
-  source = "../../../modules-new/otc-project-scoped-user"
+  source = "iits-consulting/project-scoped-user/opentelekomcloud"
   name   = "${var.context}-${var.stage}-my-service"
-  roles  = ["system_all_60"]
+  roles  = ["my_custom_role"]
 }
 
 resource "vault_generic_secret" "my_service_credentials" {
@@ -36,13 +36,15 @@ resource "vault_generic_secret" "my_service_credentials" {
 If you want to assign the user to one of OTC's built-in groups instead of creating a new one, set `create_group = false`. The module will look up the group by `var.name` and assign the roles to it:
 
 ```hcl
-module "my_service_user" {
-  source       = "../../../modules-new/otc-project-scoped-user"
+module "dns_user" {
+  source       = "iits-consulting/project-scoped-user/opentelekomcloud"
   name         = "existing-group-name"
-  roles        = ["system_all_60"]
+  roles        = ["dns_adm"]
   create_group = false
 }
 ```
+
+See the [OTC Documentation](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/data-sources/identity_role_v3) for build-in roles.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
