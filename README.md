@@ -78,10 +78,10 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_create_group"></a> [create\_group](#input\_create\_group) | Can be used to disable creation of a group and assign the user and the roles to an existing one. | `bool` | `true` | no |
-| <a name="input_description"></a> [description](#input\_description) | Description of the created resources. Default: "Created by terraform for user/group <var.name> with roles: <var.roles>." | `string` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the OTC resources being created. | `string` | n/a | yes |
 | <a name="input_roles"></a> [roles](#input\_roles) | Roles assigned to the user/group. Roles must exist and be within the same project scope as the provider. | `set(string)` | n/a | yes |
+| <a name="input_create_group"></a> [create\_group](#input\_create\_group) | Can be used to disable creation of a group and assign the user and the roles to an existing one. | `bool` | `true` | no |
+| <a name="input_description"></a> [description](#input\_description) | Description of the created resources. Default: "Created by terraform for user/group <var.name> with roles: <var.roles>." | `string` | `null` | no |
 
 ## Outputs
 
