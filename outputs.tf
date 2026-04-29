@@ -24,3 +24,8 @@ output "project_id" {
   value       = data.opentelekomcloud_identity_project_v3.current.id
   description = "ID of the OTC project the user and roles are scoped to."
 }
+
+output "domain_id" {
+  value       = data.opentelekomcloud_identity_project_v3.current.domain_id
+  description = "ID of the OTC domain the user and roles are scoped to."
+}

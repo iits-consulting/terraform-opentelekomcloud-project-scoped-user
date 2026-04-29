@@ -37,9 +37,11 @@ locals {
 resource "opentelekomcloud_identity_role_assignment_v3" "role_to_group" {
   for_each = data.opentelekomcloud_identity_role_v3.roles
 
-  group_id   = local.group_id
-  role_id    = each.value.id
-  project_id = data.opentelekomcloud_identity_project_v3.current.id
+  group_id     = local.group_id
+  role_id      = each.value.id
+  project_id   = var.all_projects ? null : data.opentelekomcloud_identity_project_v3.current.id
+  domain_id    = var.all_projects ? data.opentelekomcloud_identity_project_v3.current.domain_id : null
+  all_projects = var.all_projects
 }
 
 # Add the user to the new or existing group
