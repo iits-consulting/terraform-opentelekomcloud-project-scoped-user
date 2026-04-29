@@ -83,6 +83,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_name"></a> [name](#input\_name) | Name for the OTC resources being created. | `string` | n/a | yes |
 | <a name="input_roles"></a> [roles](#input\_roles) | Roles assigned to the user/group. Roles must exist and be within the same project scope as the provider. | `set(string)` | n/a | yes |
+| <a name="input_all_projects"></a> [all\_projects](#input\_all\_projects) | Whether to assign role for all existing and future projects within the OTC domain. | `bool` | `false` | no |
 | <a name="input_create_group"></a> [create\_group](#input\_create\_group) | Can be used to disable creation of a group and assign the user and the roles to an existing one. | `bool` | `true` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description of the created resources. Default: "Created by terraform for user/group <var.name> with roles: <var.roles>." | `string` | `null` | no |
 
@@ -91,6 +92,7 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_access_key"></a> [access\_key](#output\_access\_key) | Access key for authenticating with the created user. |
+| <a name="output_domain_id"></a> [domain\_id](#output\_domain\_id) | ID of the OTC domain the user and roles are scoped to. |
 | <a name="output_group_id"></a> [group\_id](#output\_group\_id) | ID of the created group. If var.create\_group is set to false, it will passthrough the ID of the existing group. |
 | <a name="output_project_id"></a> [project\_id](#output\_project\_id) | ID of the OTC project the user and roles are scoped to. |
 | <a name="output_secret_key"></a> [secret\_key](#output\_secret\_key) | Secret key for authenticating with the created user. |
