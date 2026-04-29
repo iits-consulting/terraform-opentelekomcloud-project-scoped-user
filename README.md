@@ -50,14 +50,14 @@ See the [OTC Documentation](https://registry.terraform.io/providers/opentelekomc
 ## Requirements
 
 | Name | Version |
-| ---- | ------- |
+|------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.7 |
 | <a name="requirement_opentelekomcloud"></a> [opentelekomcloud](#requirement\_opentelekomcloud) | ~> 1.36 |
 
 ## Providers
 
 | Name | Version |
-| ---- | ------- |
+|------|---------|
 | <a name="provider_opentelekomcloud"></a> [opentelekomcloud](#provider\_opentelekomcloud) | ~> 1.36 |
 
 ## Modules
@@ -67,7 +67,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-| ---- | ---- |
+|------|------|
 | [opentelekomcloud_identity_credential_v3.user_aksk](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/resources/identity_credential_v3) | resource |
 | [opentelekomcloud_identity_group_membership_v3.user_to_group](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/resources/identity_group_membership_v3) | resource |
 | [opentelekomcloud_identity_group_v3.group](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/resources/identity_group_v3) | resource |
@@ -80,17 +80,17 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-| ---- | ----------- | ---- | ------- | :------: |
+|------|-------------|------|---------|:--------:|
 | <a name="input_name"></a> [name](#input\_name) | Name for the OTC resources being created. | `string` | n/a | yes |
 | <a name="input_roles"></a> [roles](#input\_roles) | Roles assigned to the user/group. Roles must exist and be within the same project scope as the provider. | `set(string)` | n/a | yes |
-| <a name="input_all_projects"></a> [all\_projects](#input\_all\_projects) | Whether to assign role for all existing and future projects. | `bool` | `false` | no |
+| <a name="input_all_projects"></a> [all\_projects](#input\_all\_projects) | Whether to assign role for all existing and future projects within the OTC domain. | `bool` | `false` | no |
 | <a name="input_create_group"></a> [create\_group](#input\_create\_group) | Can be used to disable creation of a group and assign the user and the roles to an existing one. | `bool` | `true` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description of the created resources. Default: "Created by terraform for user/group <var.name> with roles: <var.roles>." | `string` | `null` | no |
 
 ## Outputs
 
 | Name | Description |
-| ---- | ----------- |
+|------|-------------|
 | <a name="output_access_key"></a> [access\_key](#output\_access\_key) | Access key for authenticating with the created user. |
 | <a name="output_domain_id"></a> [domain\_id](#output\_domain\_id) | ID of the OTC domain the user and roles are scoped to. |
 | <a name="output_group_id"></a> [group\_id](#output\_group\_id) | ID of the created group. If var.create\_group is set to false, it will passthrough the ID of the existing group. |
