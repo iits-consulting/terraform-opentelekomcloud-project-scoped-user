@@ -24,3 +24,9 @@ variable "create_group" {
   description = "Can be used to disable creation of a group and assign the user and the roles to an existing one."
   default     = true
 }
+
+variable "all_projects" {
+  type        = bool
+  description = "Whether to assign role for all existing and future projects within the OTC domain."
+  default     = false
+}
